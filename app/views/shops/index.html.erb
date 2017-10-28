@@ -1,0 +1,23 @@
+<div class="container">
+
+  <br>
+  <div class="container">
+  <center>
+    <h1> liste des Shops </h1>
+  </center>
+  </div>
+  <br>
+    <% @shops.each do |shop| %>
+    <div class="container">
+      <ul class="list-group">
+        <li class="list-group-item"><a href ="<%= shop_path(shop.id)%>" >
+          <%= shop.name %></a>
+          <span class="badge">
+            <a href ="<%= edit_shop_path(shop.id)%>" class="btn btn-primary"> Modifier </a>
+            <a href="<%= shop_path(shop.id) %>" class="btn btn-danger" data-confirm="etes vous sur?"  data-method="DELETE"> Suprimer </a>
+          </span>
+        </li>
+      </ul>
+    </div>
+  <%end%>
+</div>

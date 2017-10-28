@@ -1,0 +1,38 @@
+<div class="container">
+
+  <br>
+  <div class="container">
+  <center>
+  <h1> <%= @shop.name %> </h1>
+  </center>
+  </div>
+  <br>
+  <center>
+    <div class="container">
+      <ul class="list-group">
+        <li> la chain est :  <%= @shop.chain %> </li>
+        <li>  <%= @shop.latitude %> </li>
+        <li> <%= @shop.address%> </li>
+        <li> <%= @shop.city%> </li>
+        <li> <%= @shop.zip%> </li>
+        <li> <%= @shop.phone%> </li>
+        <li> <%= @shop.country_code%> </li>
+
+        </li>
+      </ul>
+    </div>
+
+
+<a href ="<%= shops_path%>" class="btn btn-primary"> revenir</a>
+<a href ="<%= edit_shop_path params[:id]%>" class="btn btn-primary"> Modifier </a>
+<a href="<%= shop_path params[:id] %>" class="btn btn-danger" data-confirm="etes vous sur?" data-method="DELETE"> Suprimer </a>
+
+<br><br>
+
+</blockquote>
+
+<%= image_tag "http://maps.google.com/maps/api/staticmap?size=450x300&sensor=false&zoom=16&markers=#{@shop.latitude}%2C#{@shop.longitude}" %>
+<h3>Nearby Locations</h3>
+
+</center>
+</div>
